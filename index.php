@@ -2,57 +2,40 @@
 // A simple website in Cloud9 that runs through Apache
 // Press the 'Run' button on the top to start the web server,
 // then click the URL that is emitted to the Output tab of the console
+require_once 'app/init.php';
+//require_once('db_class.php');
 
-
-//include 'db_connection.php';
-include 'db_class.php';
-?>
-
-<div class="text-center">
-	<a href="formView.php">Add Learnt Skill</a>
-</div>
-
-<?php 
-	$allSkills = getLerntDetails($conn);
-	if ($allSkills) {
-		foreach($allSkills->fetchAll() as $skills => $skill) {
-			echo '<p value="'.$skill['screenname'].'">'.$skill['screenname'].'</p>';
-			echo '<p value="'.$skill['learned'].'">'.$skill['learned'].'</p>';
+echo'
+	<div>
+		<a href="views/addskill.php">Add Learnt Skill</a>
+	</div>
+	<div>
+		<a href="views/allusers.php">View users</a>
+	</div>
+';
+	//$db = new Database(); //The singleton design pattern should prevent the creation of an object directly using new and force you to use getinstance
+	$db = Database::getInstance();
+	$skills = $db->qry('SELECT * FROM skills');
+	echo '<h3> Below shows todays top learned skills added</h3>';
+	if ($skills) {
+		foreach($skills as $skill) {
+			echo("<p value=\"{$skill['skill_id']}\">{$skill['description']}</p>");
+			
+			echo("<br>
+					<label>Did you learn this today also?</label>
+				    <br>
+				    <a href= 'index.php?thumb_up=true' > Tumbs Up </a>
+			    		<label value=\"{$skill['skill_id']}\">{$skill['t_up']}</label>
+			    	");
+			    echo("
+			    		<br>
+					    <a href= 'index.php?thumb_down=true'> Thumbs Down </a>
+					    <label value=\"{$skill['skill_id']}\">{$skill['t_down']}</label>
+					    <br>
+			    ");
+		     if (isset($_POST['thumb_up'])) {
+			    $i_learnt_that_too= $db->qry("UPDATE skills SET t_up++ WHERE $skill_id=4");
+			  }
 		}
 	}
 ?>
-
-<div class="text-center">
-	<a href="formView.php">Add Learnt Skill</a>
-</div>
-
-<!--
-
-<?php
-// A simple website in Cloud9 that runs through Apache
-// Press the 'Run' button on the top to start the web server,
-// then click the URL that is emitted to the Output tab of the console
-
-
-//include 'db_connection.php';
-include 'database.php';
-?>
-
-<div class="text-center">
-	<a href="formView.php">Add Learnt Skill</a>
-</div>
-
-<?php 
-	$db = new Database();
-	var_dump($db);
-	$skills = $db->qry('SELECT * FROM skills');
-	echo '<h3> Below shows todays top learned skills added</h3>';
-	//$allSkills = getLerntDetails($conn);
-	/*if ($skills) {
-		foreach($allSkills->fetchAll() as $skills => $skill) {
-			echo '<p value="'.$skill['display_name'].'">'.$skill['display_name'].'</p>';
-		}
-	}*/
-?>
-
--->

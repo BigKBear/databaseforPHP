@@ -1,0 +1,24 @@
+[29-Oct-2015 23:09:44 UTC] PHP Warning:  require_once(../database_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/views/allusers.php on line 2
+[29-Oct-2015 23:09:44 UTC] PHP Stack trace:
+[29-Oct-2015 23:09:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:09:44 UTC] PHP Fatal error:  require_once(): Failed opening required '../database_connector.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/views/allusers.php on line 2
+[29-Oct-2015 23:09:44 UTC] PHP Stack trace:
+[29-Oct-2015 23:09:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:10:48 UTC] PHP Warning:  require_once(../database_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/views/allusers.php on line 23
+[29-Oct-2015 23:10:48 UTC] PHP Stack trace:
+[29-Oct-2015 23:10:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:10:48 UTC] PHP Fatal error:  require_once(): Failed opening required '../database_connector.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/views/allusers.php on line 23
+[29-Oct-2015 23:10:48 UTC] PHP Stack trace:
+[29-Oct-2015 23:10:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:11:25 UTC] PHP Warning:  require_once(../database_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/views/allusers.php on line 23
+[29-Oct-2015 23:11:25 UTC] PHP Stack trace:
+[29-Oct-2015 23:11:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:11:25 UTC] PHP Fatal error:  require_once(): Failed opening required '../database_connector.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/views/allusers.php on line 23
+[29-Oct-2015 23:11:25 UTC] PHP Stack trace:
+[29-Oct-2015 23:11:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:12:04 UTC] PHP Fatal error:  Class 'Database' not found in /home/ubuntu/workspace/views/allusers.php on line 30
+[29-Oct-2015 23:12:04 UTC] PHP Stack trace:
+[29-Oct-2015 23:12:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
+[29-Oct-2015 23:12:39 UTC] PHP Fatal error:  Class 'Database' not found in /home/ubuntu/workspace/views/allusers.php on line 27
+[29-Oct-2015 23:12:39 UTC] PHP Stack trace:
+[29-Oct-2015 23:12:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/views/allusers.php:0
